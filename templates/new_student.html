@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+
+
+
+{% block content %}
+
+    <h1 style='text-align:center;margin-left:300px;margin-right:300px;'
+    > Fill out the form below for more information! 
+    </h1>
+    <br>
+    <br>
+
+    <form method="POST" style='margin-left:300px;margin-right:300px;'>
+        <div id='formDIV'>
+            <div id='label_form' style='font-family:didot;margin-right:10px'>
+                {{ form.hidden_tag() }} 
+                {{ form.last_name.label}}  
+
+                {{ form.hidden_tag() }} 
+                {{ form.first_name.label }}  
+                
+                {{ form.hidden_tag() }} 
+                {{ form.email.label }} 
+            </div>
+
+            <div id='input_form' style='font-family:didot'> 
+                {{ form.first_name() }}
+                {{ form.last_name() }}
+                {{ form.email() }}
+            </div>
+            <br/>
+        </div><!--outermost div-->
+        <div id="submit_form">
+            {{ form.submit() }}
+        </div>
+
+
+    </form>
+
+
+
+
+{% endblock %}
